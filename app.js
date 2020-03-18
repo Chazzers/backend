@@ -25,7 +25,8 @@ const secret = process.env.SESSION_SECRET;
 const sess = {
 	secret: secret,
 	resave: false, 
-	saveUninitialized: true
+	saveUninitialized: true,
+	cookie:{}
 };
 
 // start express server
