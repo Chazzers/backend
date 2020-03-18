@@ -3,7 +3,9 @@ const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const MongoStore = require('connect-mongo')(session);
 require("dotenv").config();
+
 
 // get controller functions through require
 const renderHome = require('./controllers/renderHome');
@@ -26,7 +28,8 @@ const sess = {
 	secret: secret,
 	resave: false, 
 	saveUninitialized: true,
-	cookie:{}
+	cookie:{},
+	store: new MongoStore({ mongooseConnection: mongoose.connection })
 };
 
 // start express server
