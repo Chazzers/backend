@@ -35,6 +35,11 @@ const port = 3000;
 
 app.set('view engine', 'ejs');
 
+if (app.get('env') === 'production') {
+	app.set('trust proxy', 1) // trust first proxy
+	sess.cookie.secure = true // serve secure cookies
+  }
+
 // get home page and respond with hello world; req means request and res means response
 app.use(bodyParser.urlencoded({ extended: true }))
 	.use(session(sess))
