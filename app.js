@@ -46,7 +46,6 @@ app.use(bodyParser.urlencoded({ extended: true }))
 	.get('/login', renderLogin)
 	.get('/game-list', renderGameList)
 	.get('/profile', renderProfile)
-
 	.post('/account-created', createAccount)
 	.post('/logged-in', login)
 	.post('/liked-game', likeGame)

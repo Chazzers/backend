@@ -1,5 +1,4 @@
 const User = require("../models/User")
-const fetch = require("node-fetch");
 require("dotenv").config
 
 async function login(req, res, next) {
@@ -11,7 +10,6 @@ async function login(req, res, next) {
             if(err) {
                 console.log(err);
             }
-    
             if(data.password === password) {
                 req.session.user = {
                     username: data.username,
