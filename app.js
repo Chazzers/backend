@@ -3,7 +3,6 @@ const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const MongoStore = require('connect-mongo')(session);
 require("dotenv").config();
 
 
@@ -28,8 +27,6 @@ const sess = {
 	secret: secret,
 	resave: false, 
 	saveUninitialized: true,
-	cookie:{},
-	store: new MongoStore({ mongooseConnection: mongoose.connection })
 };
 
 // start express server
@@ -38,11 +35,6 @@ const app = express();
 const port = 3000;
 
 app.set('view engine', 'ejs');
-
-if (app.get('env') === 'production') {
-	app.set('trust proxy', 1) // trust first proxy
-	sess.cookie.secure = true // serve secure cookies
-  }
 
 // get home page and respond with hello world; req means request and res means response
 app.use(bodyParser.urlencoded({ extended: true }))
