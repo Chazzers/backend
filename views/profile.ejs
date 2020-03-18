@@ -1,0 +1,21 @@
+<%- include('partials/head') %>
+<article class="game-list-container">
+    <h1><%= title %></h1>
+    <h3><%= firstName + " " + lastName %></h3>
+    <p><%= age %> years old</p>
+    <p>Lives in <%= city %></p>
+    <footer>
+        <h3>Liked Games</h3>
+        <div class="game-list">
+        <% likedGames.forEach(function(game){ %>
+            <article>
+                <img src=<%= game.background_image%> alt="Picture of <%= game.name %>">
+                <div class="content">
+                    <h3><%= game.name %></h3>
+                </div>
+            </article>
+        <% }) %>
+        </div>
+    </footer>
+</article>
+<%- include('partials/foot') %> 

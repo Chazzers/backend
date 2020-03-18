@@ -1,4 +1,205 @@
-p {
-	font-weight: bold;
-	font-size: 3em;
+.sign-up-form-container {
+	max-width: 500px;
+	border-radius: 8px;
+	box-shadow: 8px 8px 100px rgba(0,0,0,0.3);
+	padding: 1em;
+}
+
+.sign-up-form-container h1 {
+	text-align: center;
+}
+
+.sign-up-form {
+	display: flex;
+	flex-direction: column;
+}
+
+.sign-up-form .input-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.sign-up-form .input-container input {
+	margin: 1em 0;
+	padding: 0.3em;
+	font-size: 1em;
+	display: block;
+	flex: 1;
+	border: solid black 1px;
+}
+
+.sign-up-form .input-container select {
+	margin: 1em 0;
+	padding: 0.2em;
+	display: block;
+	flex: 1;
+	text-align: center;
+	border: solid black 1px;
+}
+
+.sign-up-form .input-container label {
+	margin: 1em 0.5em;
+	display: block;
+	width: 5em;
+	text-align: right;
+}
+
+.submit-btn-container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+
+.submit-btn-container a {
+	color: gray;
+	padding: 1em 0 0;
+}
+
+.form-submit-btn {
+	padding: 1em;
+	font-size: 1em;
+	border: none;
+	background-color: black;
+	color: white;
+	width: calc(100% - 6em)
+}
+
+main {
+	max-width: 980px;
+	min-height: calc(100vh - 50px);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 1em;
+}
+
+header {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	top: 0;
+	text-align: center;
+	width: 100%;
+	background-color: white;
+	z-index: 3;
+	border-bottom: solid 1px black;
+}
+
+nav {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	z-index: 3;
+	background-color: white;
+	border-top: solid black 1px;
+	height: 50px;
+}
+
+ul {
+	display: flex;
+	padding: 0;
+	list-style: none;
+	margin: 0;
+	height: 100%;
+	justify-content: center;
+}
+
+ul li {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+ul li:first-of-type {
+	border-right: solid black 1px;
+}
+
+ul li a {
+	text-decoration: none;
+	color: black;
+}
+
+main .game-list-container {
+	margin-top: 3em;
+}
+
+.game-list-container article {
+	border-radius: 8px;
+	box-shadow: 8px 8px 100px rgba(0,0,0,0.3);
+	margin: 1em 0;
+	overflow: hidden;
+	height: 20em;
+	position: relative;
+	max-width: 20em;
+}
+
+.game-list-container article img {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+.game-list-container article .content {
+	padding: 0 1em 1em;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	width: calc(100% - 2em);
+	background-color: white;
+}
+
+.game-list-container article .content h3 {
+	margin: 0;
+}
+
+.game-list-container article .content button {
+	padding: 0;
+}
+
+.game-list-container article .content button p {
+	padding: 0;
+	margin: 0;
+}
+
+.game-list-container footer article .content h3 {
+	margin-top: 0.5em;
+}
+
+.game-list-container footer {
+	margin-bottom: 3em;
+}
+
+body {
+	margin: 0;
+}
+
+@media screen and (min-width: 1180px) {
+	main {
+		margin: auto;
+	}
+	.game-list-container {
+		border-radius: 8px;
+		box-shadow: 8px 8px 100px rgba(0,0,0,0.3);
+		padding: 1em;
+	}
+	.game-list-container .game-list {
+		display: flex;
+		flex-wrap: nowrap;
+		overflow: scroll;
+		padding: 1em 0 ;
+		margin: 0 -1em -1em;
+	}
+	.game-list-container .game-list article {
+		min-width: 20em;
+		margin: 0 1em;
+	}
 }

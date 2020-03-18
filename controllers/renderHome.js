@@ -1,15 +1,9 @@
-const data = [
-	{
-		name: "Chazz"
-	},{
-		name: "Johan"
-	},{
-		name: "Jamie"
-	}
-]
-
 function renderHome(req, res) {
-    return res.render('home', { title: 'Yolo', data: data});
+    if(!req.session.user) {
+        res.redirect('/login')
+    } else {
+        res.redirect('/game-list')
+    }  
 }
 
 module.exports = renderHome;
