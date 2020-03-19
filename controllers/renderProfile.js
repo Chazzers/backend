@@ -1,4 +1,5 @@
 const fetch = require('node-fetch');
+const User = require('../models/User');
 
 async function renderProfile(req, res, next) {
     try {
@@ -11,7 +12,7 @@ async function renderProfile(req, res, next) {
             .then(games => games.results)
             .then(games => {
                 const newGames = games.filter(d => newLikedGames.some(f => f == d.id));
-                console.log(newGames);
+                // console.log(newGames);
                 return newGames;
             })
             .then(games => {

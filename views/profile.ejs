@@ -12,6 +12,12 @@
                 <img src=<%= game.background_image%> alt="Picture of <%= game.name %>">
                 <div class="content">
                     <h3><%= game.name %></h3>
+                    <form action="/unliked-game" method="POST">
+                        <button type="submit" name="id" value="<%= game.id %>">
+                            <img src="images/thumb_down-24px.svg" alt="">
+                            <p>Unlike</p>
+                        </button>
+                    </form>
                 </div>
             </article>
         <% }) %>
